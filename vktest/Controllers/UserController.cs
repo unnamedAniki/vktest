@@ -58,6 +58,7 @@ namespace vktest.Controllers
                     value.User_State_Id = ((int)UserState.UserStatesState.Active);
                     value.Created_Date = DateTime.UtcNow;
                     value.User_Group_Id = ((int)UserGroup.UserGroupState.User);
+                    await Task.Delay(5000);
                     await _context.Set<User>().AddAsync(value);
                     var result = await _context.SaveChangesAsync();
 
